@@ -1,4 +1,4 @@
-import { IGUserInfo, User } from "@/interface";
+import { User } from "@/interface";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -13,9 +13,6 @@ const dataSlice = createSlice({
     setUser: (state, action: PayloadAction<User>) => {
       state.user = action.payload;
     },
-    setIGInfo: (state, action: PayloadAction<IGUserInfo>) => {
-      state.user.igUserInfo = action.payload;
-    },
     resetState: () => initialState,
     setLoading: (state, action: PayloadAction<boolean>) => {
       state.loading = action.payload;
@@ -23,5 +20,5 @@ const dataSlice = createSlice({
   },
 });
 
-export const { setUser, setIGInfo, resetState, setLoading } = dataSlice.actions;
+export const { setUser, resetState, setLoading } = dataSlice.actions;
 export default dataSlice.reducer;
